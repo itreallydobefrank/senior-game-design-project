@@ -14,25 +14,34 @@ public class BulletScript : MonoBehaviour
     //Destroy time
     public float destroyTime = 3.0f;
     public Camera fpsCam;
-    public float range = 1000f;
-    AudioSource myaudio;
+    public float range = 10000f;
+    
+    // Audio
+    GameObject SoundManagerObject;
+    SoundManager sound_manager;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        myaudio = GetComponent<AudioSource>();
+    GameObject Enemies;
+    CannonShooter cannonScript;
+
+    void Awake(){
+        Enemies = GameObject.Find("ENEMIES");
+        SoundManagerObject = GameObject.Find("SOUND_MANAGER");
+        sound_manager = SoundManagerObject.GetComponent<SoundManager>();
     }
-
 
     void Shoot()
     {
         RaycastHit hit;
         if(Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, range))
         {
-            Debug.Log(hit.transform.name);
-            if(hit.transform.name == "Cannon"){
-                PlayerPrefs.SetInt("disabled", 1);
-                Debug.Log("hit cannon");
+            string objectName = hit.transform.name;
+            string[] splitName = objectName.Split(' ');
+
+            if(splitName[0] == "Cannon"){
+                GameObject DamagedEnemy = GameObject.Find(objectName);
+                cannonScript = DamagedEnemy.GetComponent<CannonShooter>();
+                cannonScript.disableCannon();
+                sound_manager.playCannonDisabledSound();
             }
         }
 
@@ -42,24 +51,10 @@ public class BulletScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0)) {
-
+        if(Input.GetMouseButtonDown(0))
+        {
             Shoot();
-            /*
-            //Create a bullet instance and add force to add motion
-            GameObject bullet;
-            bullet = Instantiate(Bullet, this.transform.position, this.transform.rotation) as GameObject;
-            bullet.GetComponent<Rigidbody>().AddForce(transform.forward * 2000.0f);
-
-            //fix scale
-            bullet.transform.localScale = new Vector3(0.2f, 0.2f, 0.2f);
-
-            //Play Audio
-            myaudio.Play();
-
-            //Destroy it after a certain time
-            Destroy(bullet, destroyTime);
-            */
+            sound_manager.playGunShotSound();
         }
     }
 }

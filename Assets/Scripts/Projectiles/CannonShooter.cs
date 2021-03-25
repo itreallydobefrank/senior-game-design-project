@@ -8,37 +8,62 @@ public class CannonShooter : MonoBehaviour
     public GameObject cannonball = null;
     public GameObject play;
     private Player the_Player;
-
     private float destroyTime = 3.0f;
 
     public float delay = 5.0f;
     private float lastFired = 0.0f;
     private bool targetSafe = false;
-
+    public int range = 25;
     private int exitSafeZone = 0; 
     private float exitSafeZoneTimer = 0.0f;
     public float exitSafeZoneDelay = 4.0f;
 
     // Hit by bullet variables
     private float disabledTimer = 0.0f;
-    public float disabledTimeLimit = 6.0f;
+    public float disabledTimeLimit = 8.0f;
+    public bool disabled = false;
+
+    //Targeting
+    public Camera cannonCam;
+
+    // Audio
+    GameObject SoundManagerObject;
+    SoundManager sound_manager;
+
+         
+    public void disableCannon(){
+       disabled = true; 
+    }
+
+    private bool shootDistance(){
+        float dist = Vector3.Distance(this.transform.position, player.transform.position);
+        if(dist <= range){
+            return true;
+        } 
+        return false;
+    }
+
+    void Awake(){
+        float dist = Vector3.Distance(this.transform.position, player.transform.position);
+        Debug.Log(dist);
+        SoundManagerObject = GameObject.Find("SOUND_MANAGER");
+        sound_manager = SoundManagerObject.GetComponent<SoundManager>();
+    }
 
     void Start(){
-        PlayerPrefs.SetInt("disabled", 0);
         play = GameObject.Find("PlayerController");
         the_Player = play.GetComponent<Player>();
     }
-
 
     private void Update()
     {
         targetSafe = the_Player.safe;
 
-        if(PlayerPrefs.GetInt("disabled") == 1){
+        if(disabled == true){
             disabledTimer += Time.deltaTime;
             if(disabledTimer >= disabledTimeLimit){
                 disabledTimer = 0.0f; 
-                PlayerPrefs.SetInt("disabled", 0);
+                disabled = false;
             }
         }
         if(targetSafe){
@@ -55,8 +80,9 @@ public class CannonShooter : MonoBehaviour
             }
         }
 
-        if(!targetSafe && exitSafeZone == 0 && PlayerPrefs.GetInt("disabled") == 0){
-            TrackPlayer();
+
+        TrackPlayer();
+        if(!targetSafe && exitSafeZone == 0 && !disabled && shootDistance() == true){
             ShootCannon();
         }
     }
@@ -68,13 +94,18 @@ public class CannonShooter : MonoBehaviour
 
     void ShootCannon()
     {
-        if (Time.time > lastFired + delay)
+        RaycastHit hit;
+        if(Physics.Raycast(cannonCam.transform.position, cannonCam.transform.forward, out hit, range))
         {
-            lastFired = Time.time;
-            GameObject obj;
-            obj = Instantiate(cannonball, this.transform.position, this.transform.rotation) as GameObject;
-            obj.GetComponent<Rigidbody>().AddForce(transform.forward*10000.0f);
-            Destroy(obj, destroyTime);
+            if (Time.time > lastFired + delay)
+            {
+                sound_manager.playCannonShotSound();    
+                lastFired = Time.time;
+                GameObject obj;
+                obj = Instantiate(cannonball, this.transform.position, this.transform.rotation) as GameObject;
+                obj.GetComponent<Rigidbody>().AddForce(transform.forward*10000.0f);
+                Destroy(obj, destroyTime);
+            }
         }
     }
 
