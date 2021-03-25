@@ -9299,6 +9299,7 @@ GameObject:
   - component: {fileID: 1768632242}
   - component: {fileID: 1768632243}
   - component: {fileID: 6604991461580033250}
+  - component: {fileID: 6604991461580033251}
   m_Layer: 0
   m_Name: PlayerController
   m_TagString: Untagged
@@ -9321,3 +9322,15 @@ MonoBehaviour:
   health: 100
   score: 0
   safe: 0
+--- !u!114 &6604991461580033251
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6604991461580033249}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04dbb828ac8d3ae43a0a839f797fd3cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
