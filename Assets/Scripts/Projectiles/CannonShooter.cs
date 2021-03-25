@@ -7,7 +7,7 @@ public class CannonShooter : MonoBehaviour
     public Transform player = null;
     public GameObject cannonball = null;
     public GameObject play;
-    public Player the_Player;
+    private Player the_Player;
 
     private float destroyTime = 3.0f;
 
@@ -20,30 +20,25 @@ public class CannonShooter : MonoBehaviour
     public float exitSafeZoneDelay = 4.0f;
 
     // Hit by bullet variables
-    private bool disabled = false;
     private float disabledTimer = 0.0f;
     public float disabledTimeLimit = 6.0f;
 
     void Start(){
+        PlayerPrefs.SetInt("disabled", 0);
         play = GameObject.Find("PlayerController");
         the_Player = play.GetComponent<Player>();
     }
 
-    void OnTriggerEnter(Collider col){
-        if(col.gameObject.CompareTag("Bullet")){
-           disabled = true; 
-        }
-    }
 
     private void Update()
     {
         targetSafe = the_Player.safe;
 
-        if(disabled){
+        if(PlayerPrefs.GetInt("disabled") == 1){
             disabledTimer += Time.deltaTime;
             if(disabledTimer >= disabledTimeLimit){
                 disabledTimer = 0.0f; 
-                disabled = false;
+                PlayerPrefs.SetInt("disabled", 0);
             }
         }
         if(targetSafe){
@@ -60,7 +55,7 @@ public class CannonShooter : MonoBehaviour
             }
         }
 
-        if(!targetSafe && exitSafeZone == 0 && !disabled){
+        if(!targetSafe && exitSafeZone == 0 && PlayerPrefs.GetInt("disabled") == 0){
             TrackPlayer();
             ShootCannon();
         }
