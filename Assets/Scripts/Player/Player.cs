@@ -50,4 +50,12 @@ public class Player : MonoBehaviour
             SceneManager.LoadScene("LevelComplete");
         }
     }
+
+    void Update()
+    {
+        if (health <= 0)                            // Should always checks for low health, and go to Game Over screen if less than 0
+        {
+            SceneManager.LoadScene("GameOver");
+        }
+    }
 }
