@@ -33,6 +33,11 @@ public class Player : MonoBehaviour
            Destroy(other.gameObject); 
         }
 
+        if(other.gameObject.CompareTag("Reset")){
+                Debug.Log("SecondLevel");
+                GameObject player = GameObject.Find("PlayerController");
+                player.transform.position = new Vector3(-167.3f, 54.4f, 88.4f);
+        }
 
         if(other.gameObject.CompareTag("SafeZone"))
         {

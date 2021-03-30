@@ -29,7 +29,11 @@ public class PlayerController : MonoBehaviour
     public bool WallrunningLeft;
     public bool WallrunningRight;
     private bool canwallrun; 
-    
+    private bool WallRunTimeOver = false;
+    public float WallRunTimeLimit = 3.0f;
+    public float WallRunTimer = 0.0f;
+    private bool SwitchJump = false;
+
     public bool IsParkour;
     private float t_parkour;
     private float chosenParkourMoveTime;
@@ -57,6 +61,9 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+        if(canwallrun == false)
+        {
+        }
         if (rbfps.Grounded)
         {
             rb.drag = drag_grounded;
@@ -111,9 +118,8 @@ public class PlayerController : MonoBehaviour
         //Parkour
         if (IsParkour && t_parkour < 1f)
         {
-            t_parkour += Time.deltaTime / chosenParkourMoveTime;
-            transform.position = Vector3.Lerp(RecordedStartPosition, RecordedMoveToPosition, t_parkour);
-
+            t_parkour += Time.deltaTime / chosenParkourMoveTime; transform.position = Vector3.Lerp(RecordedStartPosition, RecordedMoveToPosition, t_parkour);
+                                                       
             if (t_parkour >= 1f)
             {
                 IsParkour = false;
@@ -176,14 +182,29 @@ public class PlayerController : MonoBehaviour
             cameraAnimator.SetBool("WallRight", false);
         }
 
-        if (WallRunning)
+
+        
+        if (WallRunning && !SwitchJump)
         {
-            
+             
+            WallRunTimer += Time.deltaTime;
+            if(WallRunTimer >= WallRunTimeLimit)
+            {
+                if(WallrunningLeft)
+                    rb.velocity = transform.right * WallJumpForwardVelocity + transform.up * WallJumpUpVelocity; 
+                if(WallrunningRight){
+                    rb.velocity = -transform.right * WallJumpForwardVelocity + transform.up * WallJumpUpVelocity; 
+                }
+                WallRunTimer = 0.0f;
+
+            }
             rb.velocity = new Vector3(rb.velocity.x, upforce ,rb.velocity.z); 
             upforce -= WallRunUpForce_DecreaseRate * Time.deltaTime; // wallrun curve
 
             if (Input.GetKeyDown(KeyCode.Space))
             {
+                SwitchJump = true;
+                WallRunTimer = 0.0f;
                 rb.velocity = transform.forward * WallJumpForwardVelocity + transform.up * WallJumpUpVelocity; 
                 WallrunningLeft = false;
                 WallrunningRight = false;
@@ -194,6 +215,41 @@ public class PlayerController : MonoBehaviour
                 WallrunningRight = false;
             }
         }
+
+        // Allows wallrunning when jumping from another wall
+        if (WallRunning && SwitchJump)
+        {
+            SwitchJump = false;
+            WallRunTimer += Time.deltaTime;
+            if(WallRunTimer >= WallRunTimeLimit)
+            {
+                if(WallrunningLeft)
+                    rb.velocity = transform.right * WallJumpForwardVelocity + transform.up * WallJumpUpVelocity; 
+                if(WallrunningRight){
+                    rb.velocity = -transform.right * WallJumpForwardVelocity + transform.up * WallJumpUpVelocity; 
+                }
+                WallRunTimer = 0.0f;
+
+            }
+            rb.velocity = new Vector3(rb.velocity.x, upforce ,rb.velocity.z); 
+            upforce -= WallRunUpForce_DecreaseRate * Time.deltaTime; // wallrun curve
+
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                SwitchJump = false;
+                WallRunTimer = 0.0f;
+                rb.velocity = transform.forward * WallJumpForwardVelocity + transform.up * WallJumpUpVelocity; 
+                WallrunningLeft = false;
+                WallrunningRight = false;
+            }
+            if(rbfps.Grounded)
+            {
+                WallrunningLeft = false;
+                WallrunningRight = false;
+            }
+        }
+
+        
 
 
     }

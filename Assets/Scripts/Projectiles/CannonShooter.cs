@@ -6,7 +6,7 @@ public class CannonShooter : MonoBehaviour
 {
     public Transform player = null;
     public GameObject cannonball = null;
-    public GameObject play;
+    private GameObject play;
     private Player the_Player;
     private float destroyTime = 3.0f;
 

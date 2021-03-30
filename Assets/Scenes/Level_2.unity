@@ -1182,7 +1182,7 @@ GameObject:
   - component: {fileID: 466693983}
   m_Layer: 0
   m_Name: Ground (2)
-  m_TagString: Untagged
+  m_TagString: Reset
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2574,7 +2574,7 @@ GameObject:
   - component: {fileID: 997971495}
   m_Layer: 0
   m_Name: Ground (1)
-  m_TagString: Untagged
+  m_TagString: Reset
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3882,7 +3882,7 @@ GameObject:
   - component: {fileID: 1270068887}
   m_Layer: 0
   m_Name: Ground (3)
-  m_TagString: Untagged
+  m_TagString: Reset
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5843,41 +5843,6 @@ MonoBehaviour:
   IsEnabled: 1
   tags:
   - Wall
---- !u!114 &1768632242
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6604991461580033249}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e963e903d64674841984aeac33551bc4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  drag_grounded: 5
-  drag_inair: 0.2
-  detectVaultObject: {fileID: 1354988162}
-  detectVaultObstruction: {fileID: 1204730071}
-  detectClimbObject: {fileID: 1427710986}
-  detectClimbObstruction: {fileID: 1966502077}
-  DetectWallL: {fileID: 634391680}
-  DetectWallR: {fileID: 94349129}
-  cameraAnimator: {fileID: 2033473021833733472}
-  WallRunUpForce: 1
-  WallRunUpForce_DecreaseRate: 4
-  WallJumpUpVelocity: 10
-  WallJumpForwardVelocity: 15
-  drag_wallrun: 0
-  WallRunning: 0
-  WallrunningLeft: 0
-  WallrunningRight: 0
-  IsParkour: 0
-  VaultTime: 0.5
-  VaultEndPoint: {fileID: 2033473022660944618}
-  ClimbTime: 0.6
-  ClimbEndPoint: {fileID: 2033473023826923451}
-  height: 2
 --- !u!114 &1768632243
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6721,9 +6686,11 @@ GameObject:
   - component: {fileID: 2009053232}
   - component: {fileID: 2009053231}
   - component: {fileID: 2009053235}
+  - component: {fileID: 2009053236}
+  - component: {fileID: 2009053237}
   m_Layer: 0
   m_Name: Ground
-  m_TagString: Untagged
+  m_TagString: Reset
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6820,6 +6787,34 @@ MonoBehaviour:
   IsEnabled: 1
   tags:
   - Wall
+--- !u!114 &2009053236
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2009053230}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29392d57340ba85109ca949544878147, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  destination: {fileID: 0}
+  firstLevel: 0
+  secondLevel: 1
+--- !u!65 &2009053237
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2009053230}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 9.999999, y: 2.220446e-16, z: 10}
+  m_Center: {x: 0.000000033527613, y: -0.000000014901161, z: 0}
 --- !u!1 &2065503632
 GameObject:
   m_ObjectHideFlags: 0
@@ -7299,7 +7294,7 @@ GameObject:
   - component: {fileID: 2033473021919268025}
   m_Layer: 0
   m_Name: Detection
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7477,7 +7472,7 @@ GameObject:
   - component: {fileID: 2033473022581948640}
   m_Layer: 0
   m_Name: VaultReferencePoints
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7538,7 +7533,7 @@ GameObject:
   - component: {fileID: 2033473022829290932}
   m_Layer: 0
   m_Name: CamOffset
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8109,13 +8104,13 @@ GameObject:
   - component: {fileID: 2033473022429722298}
   - component: {fileID: 2033473022429722299}
   - component: {fileID: 2033473022429722244}
-  - component: {fileID: 1768632242}
   - component: {fileID: 1768632243}
   - component: {fileID: 6604991461580033250}
   - component: {fileID: 6604991461580033251}
+  - component: {fileID: 6604991461580033252}
   m_Layer: 0
   m_Name: PlayerController
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8147,3 +8142,40 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04dbb828ac8d3ae43a0a839f797fd3cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &6604991461580033252
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6604991461580033249}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af8241fc7bd88b315aaf01fbb000c29f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  drag_grounded: 5
+  drag_inair: 0.2
+  detectVaultObject: {fileID: 1354988162}
+  detectVaultObstruction: {fileID: 1204730071}
+  detectClimbObject: {fileID: 1427710986}
+  detectClimbObstruction: {fileID: 1427710986}
+  DetectWallL: {fileID: 634391680}
+  DetectWallR: {fileID: 94349129}
+  cameraAnimator: {fileID: 2033473021833733472}
+  WallRunUpForce: 2
+  WallRunUpForce_DecreaseRate: 6
+  WallJumpUpVelocity: 9
+  WallJumpForwardVelocity: 9
+  drag_wallrun: -0.5
+  WallRunning: 0
+  WallrunningLeft: 0
+  WallrunningRight: 0
+  WallRunTimeLimit: 3.5
+  WallRunTimer: 1
+  IsParkour: 0
+  VaultTime: 1
+  VaultEndPoint: {fileID: 2033473022660944618}
+  ClimbTime: 1
+  ClimbEndPoint: {fileID: 2033473023826923451}
+  height: 2
