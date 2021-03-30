@@ -7195,11 +7195,11 @@ MonoBehaviour:
   DetectWallL: {fileID: 634391680}
   DetectWallR: {fileID: 94349129}
   cameraAnimator: {fileID: 2033473021833733472}
-  WallRunUpForce: 4
+  WallRunUpForce: 2
   WallRunUpForce_DecreaseRate: 6
   WallJumpUpVelocity: 7
   WallJumpForwardVelocity: 7
-  drag_wallrun: 0
+  drag_wallrun: -0.25
   WallRunning: 0
   WallrunningLeft: 0
   WallrunningRight: 0
