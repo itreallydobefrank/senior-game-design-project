@@ -35,6 +35,7 @@ public class BulletScript : MonoBehaviour
         if(Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, range))
         {
             string objectName = hit.transform.name;
+            Debug.Log(hit.transform.name);
             string[] splitName = objectName.Split(' ');
 
             if(splitName[0] == "Cannon"){
