@@ -39,7 +39,7 @@ public class Player : MonoBehaviour
 
         if(other.gameObject.CompareTag("Reset")){
                 GameObject player = GameObject.Find("PlayerController");
-                player.transform.position = new Vector3(-167.3f, 54.4f, 88.4f);
+                player.transform.position = new Vector3(-189.13f, 54.4f, 85.72f);
         }
 
         if(other.gameObject.CompareTag("SafeZone"))

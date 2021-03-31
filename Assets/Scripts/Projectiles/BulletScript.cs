@@ -5,12 +5,6 @@ using UnityEngine;
 [RequireComponent(typeof(AudioSource))]
 public class BulletScript : MonoBehaviour
 {
-    // Bullet prefab from inspector
-    public GameObject Bullet;
-
-    // Enter the Speed of the Bullet from the Component inspector.
-    public float BulletForce = 10000.0f;
-
     //Destroy time
     public float destroyTime = 3.0f;
     public Camera fpsCam;
@@ -22,6 +16,7 @@ public class BulletScript : MonoBehaviour
 
     GameObject Enemies;
     CannonShooter cannonScript;
+    public GameObject muzzleFlash;
 
     void Awake(){
         Enemies = GameObject.Find("ENEMIES");
@@ -54,6 +49,7 @@ public class BulletScript : MonoBehaviour
     {
         if(Input.GetMouseButtonDown(0))
         {
+            muzzleFlash.GetComponent<ParticleSystem>().Play();
             Shoot();
             sound_manager.playGunShotSound();
         }
