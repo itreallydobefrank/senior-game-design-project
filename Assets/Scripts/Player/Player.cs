@@ -16,11 +16,15 @@ public class Player : MonoBehaviour
     public void Awake(){
         SoundManagerObject = GameObject.Find("SOUND_MANAGER");
         sound_manager = SoundManagerObject.GetComponent<SoundManager>();
+        if(PlayerPrefs.GetInt("CurrentLevel") == 0){
+            PlayerPrefs.SetInt("CurrentLevel", 1);
+        }
+        Debug.Log(PlayerPrefs.GetInt("CurrentLevel"));
     }
 
     public void Start()
     {
-        health = 100;
+        health = 200;
         score = 0;
     }
 
@@ -34,7 +38,6 @@ public class Player : MonoBehaviour
         }
 
         if(other.gameObject.CompareTag("Reset")){
-                Debug.Log("SecondLevel");
                 GameObject player = GameObject.Find("PlayerController");
                 player.transform.position = new Vector3(-167.3f, 54.4f, 88.4f);
         }
@@ -55,6 +58,7 @@ public class Player : MonoBehaviour
     {
         if (health <= 0)                            // Should always checks for low health, and go to Game Over screen if less than 0
         {
+            PlayerPrefs.SetInt("CurrentLevel", 2);
             SceneManager.LoadScene("GameOver");
         }
     }
