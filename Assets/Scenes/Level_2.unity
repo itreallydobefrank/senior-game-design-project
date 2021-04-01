@@ -1491,6 +1491,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerController
       objectReference: {fileID: 0}
+    - target: {fileID: 8108826972728606722, guid: 0515c3223824e3319b8746c2c829d211, type: 3}
+      propertyPath: PauseMenu
+      value: 
+      objectReference: {fileID: 1841547585}
     - target: {fileID: 8108826972728606725, guid: 0515c3223824e3319b8746c2c829d211, type: 3}
       propertyPath: WallRunTimeLimit
       value: 4.5
@@ -6484,6 +6488,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8783176116026669416, guid: 7f6cee2a421ad69a9b6264c7573ab21e, type: 3}
   m_PrefabInstance: {fileID: 1759151630}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1841547585 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8400358297967850253, guid: 16b372b08d2b98c409caa1ee0165e4f2, type: 3}
+  m_PrefabInstance: {fileID: 2080712128}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1866752108
 GameObject:
   m_ObjectHideFlags: 0
@@ -7380,6 +7389,10 @@ PrefabInstance:
     - target: {fileID: 8400358297967850253, guid: 16b372b08d2b98c409caa1ee0165e4f2, type: 3}
       propertyPath: m_Name
       value: Pause Screen
+      objectReference: {fileID: 0}
+    - target: {fileID: 8400358297967850253, guid: 16b372b08d2b98c409caa1ee0165e4f2, type: 3}
+      propertyPath: m_Layer
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8400358297967850253, guid: 16b372b08d2b98c409caa1ee0165e4f2, type: 3}
       propertyPath: m_IsActive
