@@ -9,6 +9,7 @@ TagManager:
   - SafeZone
   - cannonball
   - CompleteZone
+  - Reset
   layers:
   - Default
   - TransparentFX
