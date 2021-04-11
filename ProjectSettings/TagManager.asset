@@ -10,6 +10,7 @@ TagManager:
   - cannonball
   - CompleteZone
   - Reset
+  - Target
   layers:
   - Default
   - TransparentFX
