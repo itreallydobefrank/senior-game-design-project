@@ -46,11 +46,76 @@ public class BulletScript : MonoBehaviour
                 sound_manager.playCannonDisabledSound();
             }
 
-            if (splitName[0] == "Target")
+            if (splitName[0] == "Target1")
             {
                 GameObject HitTarget = GameObject.Find(objectName);
                 targetScript = HitTarget.GetComponent<Target>();
                 targetScript.activateTarget();
+                sound_manager.playTargetHitSound();
+            }
+
+            if (splitName[0] == "Target2")
+            {
+                GameObject HitTarget = GameObject.Find(objectName);
+                targetScript = HitTarget.GetComponent<Target>();
+                targetScript.activateTarget();
+                sound_manager.playTargetHitSound();
+            }
+
+            if (splitName[0] == "Target3")
+            {
+                GameObject HitTarget = GameObject.Find(objectName);
+                targetScript = HitTarget.GetComponent<Target>();
+                targetScript.activateTarget();
+                sound_manager.playTargetHitSound();
+            }
+
+            if (splitName[0] == "Target4")
+            {
+                GameObject HitTarget = GameObject.Find(objectName);
+                targetScript = HitTarget.GetComponent<Target>();
+                targetScript.activateTarget();
+                sound_manager.playTargetHitSound();
+            }
+
+            if (splitName[0] == "Target5")
+            {
+                GameObject HitTarget = GameObject.Find(objectName);
+                targetScript = HitTarget.GetComponent<Target>();
+                targetScript.activateTarget();
+                sound_manager.playTargetHitSound();
+            }
+
+            if (splitName[0] == "Target6")
+            {
+                GameObject HitTarget = GameObject.Find(objectName);
+                targetScript = HitTarget.GetComponent<Target>();
+                targetScript.activateTarget();
+                sound_manager.playTargetHitSound();
+            }
+
+            if (splitName[0] == "Target7")
+            {
+                GameObject HitTarget = GameObject.Find(objectName);
+                targetScript = HitTarget.GetComponent<Target>();
+                targetScript.activateTarget();
+                sound_manager.playTargetHitSound();
+            }
+
+            if (splitName[0] == "Target8")
+            {
+                GameObject HitTarget = GameObject.Find(objectName);
+                targetScript = HitTarget.GetComponent<Target>();
+                targetScript.activateTarget();
+                sound_manager.playTargetHitSound();
+            }
+
+            if (splitName[0] == "Target9")
+            {
+                GameObject HitTarget = GameObject.Find(objectName);
+                targetScript = HitTarget.GetComponent<Target>();
+                targetScript.activateTarget();
+                sound_manager.playTargetHitSound();
             }
         }
 
