@@ -23,6 +23,8 @@ public class BulletScript : MonoBehaviour
     GameObject Enemies;
     CannonShooter cannonScript;
 
+    Target targetScript;
+
     void Awake(){
         Enemies = GameObject.Find("ENEMIES");
         SoundManagerObject = GameObject.Find("SOUND_MANAGER");
@@ -42,6 +44,13 @@ public class BulletScript : MonoBehaviour
                 cannonScript = DamagedEnemy.GetComponent<CannonShooter>();
                 cannonScript.disableCannon();
                 sound_manager.playCannonDisabledSound();
+            }
+
+            if (splitName[0] == "Target")
+            {
+                GameObject HitTarget = GameObject.Find(objectName);
+                targetScript = HitTarget.GetComponent<Target>();
+                targetScript.activateTarget();
             }
         }
 
