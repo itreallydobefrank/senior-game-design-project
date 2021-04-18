@@ -36,12 +36,13 @@ public class Player : MonoBehaviour
            health -= 20;
            Destroy(other.gameObject); 
         }
-
+        
         if(other.gameObject.CompareTag("Reset")){
                 GameObject player = GameObject.Find("PlayerController");
                 player.transform.position = new Vector3(-189.13f, 54.4f, 85.72f);
+                //player.transform.position = new Vector3(-124.7f, 22.49f, 37.64f);
         }
-
+        
         if(other.gameObject.CompareTag("SafeZone"))
         {
             safe = true;

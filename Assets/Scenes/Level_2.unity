@@ -1114,6 +1114,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1699542293}
+    - target: {fileID: 8783176116026669417, guid: 7f6cee2a421ad69a9b6264c7573ab21e, type: 3}
+      propertyPath: disabledTimeLimit
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 8783176116026669419, guid: 7f6cee2a421ad69a9b6264c7573ab21e, type: 3}
       propertyPath: m_Name
       value: Cannon (2)
@@ -1298,6 +1302,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1699542293}
+    - target: {fileID: 8783176116026669417, guid: 7f6cee2a421ad69a9b6264c7573ab21e, type: 3}
+      propertyPath: disabledTimeLimit
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 8783176116026669419, guid: 7f6cee2a421ad69a9b6264c7573ab21e, type: 3}
       propertyPath: m_Name
       value: Cannon
@@ -1476,6 +1484,10 @@ PrefabInstance:
       value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 3108033045245207378, guid: 0515c3223824e3319b8746c2c829d211, type: 3}
+      propertyPath: movementSettings.JumpForce
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 3108033045245207378, guid: 0515c3223824e3319b8746c2c829d211, type: 3}
       propertyPath: movementSettings.StrafeSpeed
       value: 3
       objectReference: {fileID: 0}
@@ -1495,6 +1507,10 @@ PrefabInstance:
       propertyPath: PauseMenu
       value: 
       objectReference: {fileID: 1841547585}
+    - target: {fileID: 8108826972728606725, guid: 0515c3223824e3319b8746c2c829d211, type: 3}
+      propertyPath: ClimbTime
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 8108826972728606725, guid: 0515c3223824e3319b8746c2c829d211, type: 3}
       propertyPath: WallRunTimeLimit
       value: 4.5
@@ -2331,6 +2347,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1699542293}
+    - target: {fileID: 8783176116026669417, guid: 7f6cee2a421ad69a9b6264c7573ab21e, type: 3}
+      propertyPath: disabledTimeLimit
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 8783176116026669419, guid: 7f6cee2a421ad69a9b6264c7573ab21e, type: 3}
       propertyPath: m_Name
       value: Cannon (5)
@@ -4783,6 +4803,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1699542293}
+    - target: {fileID: 8783176116026669417, guid: 7f6cee2a421ad69a9b6264c7573ab21e, type: 3}
+      propertyPath: disabledTimeLimit
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 8783176116026669419, guid: 7f6cee2a421ad69a9b6264c7573ab21e, type: 3}
       propertyPath: m_Name
       value: Cannon (4)
@@ -6237,6 +6261,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1699542293}
+    - target: {fileID: 8783176116026669417, guid: 7f6cee2a421ad69a9b6264c7573ab21e, type: 3}
+      propertyPath: disabledTimeLimit
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 8783176116026669419, guid: 7f6cee2a421ad69a9b6264c7573ab21e, type: 3}
       propertyPath: m_Name
       value: Cannon (1)
@@ -7102,6 +7130,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1699542293}
+    - target: {fileID: 8783176116026669417, guid: 7f6cee2a421ad69a9b6264c7573ab21e, type: 3}
+      propertyPath: disabledTimeLimit
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 8783176116026669419, guid: 7f6cee2a421ad69a9b6264c7573ab21e, type: 3}
       propertyPath: m_Name
       value: Cannon (3)
