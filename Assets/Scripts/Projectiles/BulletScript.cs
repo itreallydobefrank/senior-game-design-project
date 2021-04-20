@@ -5,6 +5,12 @@ using UnityEngine;
 [RequireComponent(typeof(AudioSource))]
 public class BulletScript : MonoBehaviour
 {
+    // Bullet prefab from inspector
+    public GameObject Bullet;
+
+    // Enter the Speed of the Bullet from the Component inspector.
+    public float BulletForce = 10000.0f;
+
     //Destroy time
     public float destroyTime = 3.0f;
     public Camera fpsCam;
@@ -16,7 +22,8 @@ public class BulletScript : MonoBehaviour
 
     GameObject Enemies;
     CannonShooter cannonScript;
-    public GameObject muzzleFlash;
+
+    Target targetScript;
 
     void Awake(){
         Enemies = GameObject.Find("ENEMIES");
@@ -30,7 +37,6 @@ public class BulletScript : MonoBehaviour
         if(Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, range))
         {
             string objectName = hit.transform.name;
-            Debug.Log(hit.transform.name);
             string[] splitName = objectName.Split(' ');
 
             if(splitName[0] == "Cannon"){
@@ -38,6 +44,78 @@ public class BulletScript : MonoBehaviour
                 cannonScript = DamagedEnemy.GetComponent<CannonShooter>();
                 cannonScript.disableCannon();
                 sound_manager.playCannonDisabledSound();
+            }
+
+            if (splitName[0] == "Target1")
+            {
+                GameObject HitTarget = GameObject.Find(objectName);
+                targetScript = HitTarget.GetComponent<Target>();
+                targetScript.activateTarget();
+                sound_manager.playTargetHitSound();
+            }
+
+            if (splitName[0] == "Target2")
+            {
+                GameObject HitTarget = GameObject.Find(objectName);
+                targetScript = HitTarget.GetComponent<Target>();
+                targetScript.activateTarget();
+                sound_manager.playTargetHitSound();
+            }
+
+            if (splitName[0] == "Target3")
+            {
+                GameObject HitTarget = GameObject.Find(objectName);
+                targetScript = HitTarget.GetComponent<Target>();
+                targetScript.activateTarget();
+                sound_manager.playTargetHitSound();
+            }
+
+            if (splitName[0] == "Target4")
+            {
+                GameObject HitTarget = GameObject.Find(objectName);
+                targetScript = HitTarget.GetComponent<Target>();
+                targetScript.activateTarget();
+                sound_manager.playTargetHitSound();
+            }
+
+            if (splitName[0] == "Target5")
+            {
+                GameObject HitTarget = GameObject.Find(objectName);
+                targetScript = HitTarget.GetComponent<Target>();
+                targetScript.activateTarget();
+                sound_manager.playTargetHitSound();
+            }
+
+            if (splitName[0] == "Target6")
+            {
+                GameObject HitTarget = GameObject.Find(objectName);
+                targetScript = HitTarget.GetComponent<Target>();
+                targetScript.activateTarget();
+                sound_manager.playTargetHitSound();
+            }
+
+            if (splitName[0] == "Target7")
+            {
+                GameObject HitTarget = GameObject.Find(objectName);
+                targetScript = HitTarget.GetComponent<Target>();
+                targetScript.activateTarget();
+                sound_manager.playTargetHitSound();
+            }
+
+            if (splitName[0] == "Target8")
+            {
+                GameObject HitTarget = GameObject.Find(objectName);
+                targetScript = HitTarget.GetComponent<Target>();
+                targetScript.activateTarget();
+                sound_manager.playTargetHitSound();
+            }
+
+            if (splitName[0] == "Target9")
+            {
+                GameObject HitTarget = GameObject.Find(objectName);
+                targetScript = HitTarget.GetComponent<Target>();
+                targetScript.activateTarget();
+                sound_manager.playTargetHitSound();
             }
         }
 
@@ -49,7 +127,6 @@ public class BulletScript : MonoBehaviour
     {
         if(Input.GetMouseButtonDown(0))
         {
-            muzzleFlash.GetComponent<ParticleSystem>().Play();
             Shoot();
             sound_manager.playGunShotSound();
         }
