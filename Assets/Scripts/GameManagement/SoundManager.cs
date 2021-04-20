@@ -8,8 +8,9 @@ public class SoundManager : MonoBehaviour
     public AudioSource cannonShot;
     public AudioSource cannonDisabled;
     public AudioSource playerHIT;
-    
-    
+    public AudioSource targetHit;
+
+
     public void playGunShotSound(){
         gunShot.Play();
     }
@@ -26,4 +27,8 @@ public class SoundManager : MonoBehaviour
         playerHIT.Play();
     }
 
+    public void playTargetHitSound()
+    {
+        targetHit.Play();
+    }
 }
