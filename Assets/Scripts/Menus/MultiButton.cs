@@ -16,10 +16,10 @@ public class MultiButton : MonoBehaviour
         Button menuBtn = menu.GetComponent<Button>();
         menuBtn.onClick.AddListener(mainMenu);
         multiBtn.onClick.AddListener(TaskOnClick);
-        if(PlayerPrefs.GetInt("CurrentLevel") == 1){
+        if(PlayerPrefs.GetInt("CurrentLevel") == 1 || PlayerPrefs.GetInt("CurrentLevel") == 2){
             YouWinOrLevelCompleted.text = "Level Completed";
             GameObject.Find("StateButton").GetComponentInChildren<Text>().text = "Next Level";
-        } else if(PlayerPrefs.GetInt("CurrentLevel") == 2){
+        } else if(PlayerPrefs.GetInt("CurrentLevel") == 3){
             YouWinOrLevelCompleted.text = "You Win!";
             GameObject.Find("StateButton").GetComponentInChildren<Text>().text = "Quit Game";
         } 
@@ -30,6 +30,9 @@ public class MultiButton : MonoBehaviour
             PlayerPrefs.SetInt("CurrentLevel", 2);
             SceneManager.LoadScene("Level_2");
         } else if(PlayerPrefs.GetInt("CurrentLevel") == 2){
+            PlayerPrefs.SetInt("CurrentLevel", 3);
+            SceneManager.LoadScene("Level_3");
+        } else if(PlayerPrefs.GetInt("CurrentLevel") == 3){
             PlayerPrefs.SetInt("CurrentLevel", 0);
             Application.Quit();
         }
