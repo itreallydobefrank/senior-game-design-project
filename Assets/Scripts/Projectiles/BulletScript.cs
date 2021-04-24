@@ -33,12 +33,31 @@ public class BulletScript : MonoBehaviour
 
     void Shoot()
     {
+        Ray ray = fpsCam.ScreenPointToRay(Input.mousePosition); 
         RaycastHit hit;
-        if(Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, range))
+        //if(Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, range))
+        if(Physics.Raycast(ray, out hit, 1000.0f)){
+            Debug.Log("hit: " + hit.transform.name);
+            string[] objectName = hit.transform.name.Split(' '); 
+            GameObject hitObject = GameObject.Find(objectName[0]);
+            if(objectName[0] == "Target10"){
+                Debug.Log("TARGET 10 HIT.");
+                targetScript = hitObject.GetComponent<Target>();
+                targetScript.activateTarget();
+                sound_manager.playTargetHitSound();
+                /*
+                targetScript = HitTarget.GetComponent<Target>();
+                targetScript.activateTarget();
+                sound_manager.playTargetHitSound();
+                */
+            }
+        }
+        /*
+        }
         {
+            Debug.Log(hit);
             string objectName = hit.transform.name;
             string[] splitName = objectName.Split(' ');
-
             if(splitName[0] == "Cannon"){
                 GameObject DamagedEnemy = GameObject.Find(objectName);
                 cannonScript = DamagedEnemy.GetComponent<CannonShooter>();
@@ -117,13 +136,18 @@ public class BulletScript : MonoBehaviour
                 targetScript.activateTarget();
                 sound_manager.playTargetHitSound();
             }
+
+            if (splitName[0] == "Target10")
+            {
+            }
         }
+        */
 
 
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if(Input.GetMouseButtonDown(0))
         {

@@ -123,6 +123,33 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &15742651 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1886181761747388227, guid: 0515c3223824e3319b8746c2c829d211, type: 3}
+  m_PrefabInstance: {fileID: 503381617}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &15742653
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 15742651}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a6e4e91ccd1d9b63b9b04fbdd808bbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gunRange: 100
+  orangeAreaOne: {fileID: 0}
+  orangeAreaTwo: {fileID: 0}
+  blueAreaOne: {fileID: 0}
+  blueAreaTwo: {fileID: 0}
+  yellowArea: {fileID: 0}
+  redAreaOne: {fileID: 0}
+  platformTwentyFive: {fileID: 0}
+  platformTwentySix: {fileID: 0}
+  cube: {fileID: 0}
 --- !u!1 &16432734
 GameObject:
   m_ObjectHideFlags: 0
@@ -1519,7 +1546,8 @@ PrefabInstance:
       propertyPath: WallRunTimeLimit
       value: 4.5
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1886181761747388226, guid: 0515c3223824e3319b8746c2c829d211, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 0515c3223824e3319b8746c2c829d211, type: 3}
 --- !u!1 &507932374
 GameObject:

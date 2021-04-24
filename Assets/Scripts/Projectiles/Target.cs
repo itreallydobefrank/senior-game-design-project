@@ -23,7 +23,7 @@ public class Target : MonoBehaviour
 
     public void activateTarget()
     {
-        targetObject.SetActive(true); 
+        targetObject.SetActive(false); 
     }
 
 }
