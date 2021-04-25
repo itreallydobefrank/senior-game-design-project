@@ -963,6 +963,8 @@ GameObject:
   - component: {fileID: 291696198}
   - component: {fileID: 291696197}
   - component: {fileID: 291696196}
+  - component: {fileID: 291696202}
+  - component: {fileID: 291696201}
   m_Layer: 0
   m_Name: Moving Platform
   m_TagString: Untagged
@@ -1078,6 +1080,35 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 291696194}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &291696201
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 291696194}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afe7616db73205c2eb5785ef8fb1625a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  useTriggerAsSensor: 0
+  rigidbodies: []
+  lastPosition: {x: 0, y: 0, z: 0}
+  _rigidbody: {fileID: 0}
+--- !u!114 &291696202
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 291696194}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 552c95766f3089179b8f1c9638c28c83, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  carrier: {fileID: 0}
 --- !u!1001 &302336093
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2963,6 +2994,7 @@ GameObject:
   - component: {fileID: 1025876221}
   - component: {fileID: 1025876220}
   - component: {fileID: 1025876219}
+  - component: {fileID: 1025876224}
   m_Layer: 0
   m_Name: Moving Platform (1)
   m_TagString: Untagged
@@ -3078,6 +3110,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1025876217}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1025876224
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1025876217}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afe7616db73205c2eb5785ef8fb1625a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  useTriggerAsSensor: 0
+  rigidbodies: []
+  lastPosition: {x: 0, y: 0, z: 0}
+  _rigidbody: {fileID: 0}
 --- !u!1 &1029410376
 GameObject:
   m_ObjectHideFlags: 0
