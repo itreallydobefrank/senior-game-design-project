@@ -13,15 +13,23 @@ public class Player : MonoBehaviour
     GameObject SoundManagerObject;
     SoundManager sound_manager;
 
+    // Health bar
+    public GameObject hud;
+    healthBar hBar;
     public void Awake(){
+
+        // Initialize sound
         SoundManagerObject = GameObject.Find("SOUND_MANAGER");
         sound_manager = SoundManagerObject.GetComponent<SoundManager>();
-        Debug.Log(PlayerPrefs.GetInt("CurrentLevel"));
+        Debug.Log("CurrentLevel: " + PlayerPrefs.GetInt("CurrentLevel"));
     }
 
     public void Start()
     {
-        health = 200;
+
+        // Initialize hud
+        hBar = hud.GetComponent<healthBar>();
+        health = 100;
         score = 0;
     }
 
@@ -30,7 +38,8 @@ public class Player : MonoBehaviour
         if(other.gameObject.CompareTag("cannonball"))
         {
            sound_manager.playPlayerHitSound();
-           health -= 20;
+           health -= 10;
+           hBar.TakeDamage(10);
            Destroy(other.gameObject); 
         }
         
@@ -58,6 +67,9 @@ public class Player : MonoBehaviour
 
     void Update()
     {
+        if(Input.GetKey(KeyCode.Escape)){
+            Application.LoadLevel("MainMenu");
+        }
         if (health <= 0)                            // Should always checks for low health, and go to Game Over screen if less than 0
         {
             PlayerPrefs.SetInt("CurrentLevel", 0);
