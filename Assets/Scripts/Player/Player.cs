@@ -2,12 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
     public int health;
     public int score;
     public bool safe = false;
+
+    public Text hp_UI; 
 
     // Audio
     GameObject SoundManagerObject;
@@ -40,6 +43,7 @@ public class Player : MonoBehaviour
            sound_manager.playPlayerHitSound();
            health -= 10;
            hBar.TakeDamage(10);
+           hp_UI.text = health.ToString();
            Destroy(other.gameObject); 
         }
         
