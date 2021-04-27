@@ -8,30 +8,23 @@ public class CarryRB : MonoBehaviour
     public List<Rigidbody> rigidbodies = new List<Rigidbody>();
     public Vector3 lastPosition;
     Transform _transform;
-    [HideInInspector] public Rigidbody _rigidbody;
 
     // Start is called before the first frame update
     void Start()
     {
        _transform = transform;
        lastPosition = _transform.position; 
-       _rigidbody = GetComponent<Rigidbody>();
 
-        if(useTriggerAsSensor)
-        {
-            foreach(RbSensor sensor in GetComponentsInChildren<RbSensor>())
-            {
-                sensor.carrier = this;
-            }
-        }
     }
 
     void LateUpdate()
     {
         for(int i = 0; i < rigidbodies.Count; i++){
-            Rigidbody rb = rigidbodies[i];
-            Vector3 velocity = (_transform.position - lastPosition);
-            rb.transform.Translate(velocity, _transform);
+            if(rigidbodies[i] != null){
+                Rigidbody rb = rigidbodies[i];
+                Vector3 velocity = (_transform.position - lastPosition);
+                rb.transform.Translate(velocity, _transform);
+            }
         }
 
         lastPosition = _transform.position;
@@ -39,7 +32,6 @@ public class CarryRB : MonoBehaviour
 
     void OnCollisionEnter(Collision c)
     {
-        if(useTriggerAsSensor) return;
         Rigidbody rb = c.collider.GetComponent<Rigidbody>();
         if(rb != null)
         {
@@ -49,7 +41,6 @@ public class CarryRB : MonoBehaviour
 
     void OnCollisionExit(Collision c)
     {
-        if(useTriggerAsSensor) return;
         Rigidbody rb = c.collider.GetComponent<Rigidbody>();
         if(rb != null)
         {

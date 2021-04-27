@@ -1837,7 +1837,6 @@ MonoBehaviour:
   useTriggerAsSensor: 0
   rigidbodies: []
   lastPosition: {x: 0, y: 0, z: 0}
-  _rigidbody: {fileID: 0}
 --- !u!1 &124379627
 GameObject:
   m_ObjectHideFlags: 0
@@ -4782,7 +4781,6 @@ MonoBehaviour:
   useTriggerAsSensor: 0
   rigidbodies: []
   lastPosition: {x: 0, y: 0, z: 0}
-  _rigidbody: {fileID: 0}
 --- !u!1001 &314220947
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5860,7 +5858,6 @@ MonoBehaviour:
   useTriggerAsSensor: 0
   rigidbodies: []
   lastPosition: {x: 0, y: 0, z: 0}
-  _rigidbody: {fileID: 0}
 --- !u!4 &410906713 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2020837135294629773, guid: c7947334b6719384fa6099c144236f39, type: 3}
@@ -8623,7 +8620,6 @@ MonoBehaviour:
   useTriggerAsSensor: 0
   rigidbodies: []
   lastPosition: {x: 0, y: 0, z: 0}
-  _rigidbody: {fileID: 0}
 --- !u!1 &583214975
 GameObject:
   m_ObjectHideFlags: 0
@@ -9403,7 +9399,6 @@ MonoBehaviour:
   useTriggerAsSensor: 0
   rigidbodies: []
   lastPosition: {x: 0, y: 0, z: 0}
-  _rigidbody: {fileID: 0}
 --- !u!1 &716790227
 GameObject:
   m_ObjectHideFlags: 0
@@ -9873,7 +9868,6 @@ MonoBehaviour:
   useTriggerAsSensor: 0
   rigidbodies: []
   lastPosition: {x: 0, y: 0, z: 0}
-  _rigidbody: {fileID: 0}
 --- !u!1 &737721966
 GameObject:
   m_ObjectHideFlags: 0
@@ -13569,7 +13563,6 @@ MonoBehaviour:
   useTriggerAsSensor: 0
   rigidbodies: []
   lastPosition: {x: 0, y: 0, z: 0}
-  _rigidbody: {fileID: 0}
 --- !u!1 &1014578590
 GameObject:
   m_ObjectHideFlags: 0
@@ -13715,7 +13708,6 @@ MonoBehaviour:
   useTriggerAsSensor: 0
   rigidbodies: []
   lastPosition: {x: 0, y: 0, z: 0}
-  _rigidbody: {fileID: 0}
 --- !u!1 &1017217418
 GameObject:
   m_ObjectHideFlags: 0
@@ -16142,7 +16134,6 @@ MonoBehaviour:
   useTriggerAsSensor: 0
   rigidbodies: []
   lastPosition: {x: 0, y: 0, z: 0}
-  _rigidbody: {fileID: 0}
 --- !u!1 &1247216065
 GameObject:
   m_ObjectHideFlags: 0
@@ -16399,7 +16390,6 @@ MonoBehaviour:
   useTriggerAsSensor: 0
   rigidbodies: []
   lastPosition: {x: 0, y: 0, z: 0}
-  _rigidbody: {fileID: 0}
 --- !u!1 &1249664497
 GameObject:
   m_ObjectHideFlags: 0
@@ -16800,7 +16790,6 @@ MonoBehaviour:
   useTriggerAsSensor: 0
   rigidbodies: []
   lastPosition: {x: 0, y: 0, z: 0}
-  _rigidbody: {fileID: 0}
 --- !u!1 &1270068885
 GameObject:
   m_ObjectHideFlags: 0
@@ -24732,7 +24721,6 @@ MonoBehaviour:
   useTriggerAsSensor: 0
   rigidbodies: []
   lastPosition: {x: 0, y: 0, z: 0}
-  _rigidbody: {fileID: 0}
 --- !u!1 &2031865079
 GameObject:
   m_ObjectHideFlags: 0
@@ -25814,7 +25802,6 @@ MonoBehaviour:
   useTriggerAsSensor: 0
   rigidbodies: []
   lastPosition: {x: 0, y: 0, z: 0}
-  _rigidbody: {fileID: 0}
 --- !u!1 &2119472739
 GameObject:
   m_ObjectHideFlags: 0
@@ -25960,7 +25947,6 @@ MonoBehaviour:
   useTriggerAsSensor: 0
   rigidbodies: []
   lastPosition: {x: 0, y: 0, z: 0}
-  _rigidbody: {fileID: 0}
 --- !u!1 &2120570377
 GameObject:
   m_ObjectHideFlags: 0

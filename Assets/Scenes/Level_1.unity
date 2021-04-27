@@ -690,7 +690,6 @@ MonoBehaviour:
   useTriggerAsSensor: 0
   rigidbodies: []
   lastPosition: {x: 0, y: 0, z: 0}
-  _rigidbody: {fileID: 0}
 --- !u!1 &71145114
 GameObject:
   m_ObjectHideFlags: 0
@@ -1514,7 +1513,6 @@ MonoBehaviour:
   useTriggerAsSensor: 0
   rigidbodies: []
   lastPosition: {x: 0, y: 0, z: 0}
-  _rigidbody: {fileID: 0}
 --- !u!1 &343997631
 GameObject:
   m_ObjectHideFlags: 0
@@ -2293,6 +2291,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 461735274}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &489304798 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2624379134345143798, guid: bd538ada8acfc7abdad347ff92034114, type: 3}
+  m_PrefabInstance: {fileID: 593727919}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &494945227
 GameObject:
   m_ObjectHideFlags: 0
@@ -2985,7 +2988,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2624379134212850804, guid: bd538ada8acfc7abdad347ff92034114, type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 2624379134212850804, guid: bd538ada8acfc7abdad347ff92034114, type: 3}
       propertyPath: m_AnchorMax.x
@@ -5423,7 +5426,6 @@ MonoBehaviour:
   useTriggerAsSensor: 0
   rigidbodies: []
   lastPosition: {x: 0, y: 0, z: 0}
-  _rigidbody: {fileID: 0}
 --- !u!1 &1284916534
 GameObject:
   m_ObjectHideFlags: 0
@@ -5680,7 +5682,6 @@ MonoBehaviour:
   useTriggerAsSensor: 0
   rigidbodies: []
   lastPosition: {x: 0, y: 0, z: 0}
-  _rigidbody: {fileID: 0}
 --- !u!1 &1306313453
 GameObject:
   m_ObjectHideFlags: 0
@@ -6654,7 +6655,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!82 &1631947121
 AudioSource:
@@ -7371,7 +7372,6 @@ MonoBehaviour:
   useTriggerAsSensor: 0
   rigidbodies: []
   lastPosition: {x: 0, y: 0, z: 0}
-  _rigidbody: {fileID: 0}
 --- !u!1 &1764446743
 GameObject:
   m_ObjectHideFlags: 0
@@ -8817,7 +8817,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2125116430
 GameObject:
@@ -9123,7 +9123,7 @@ PrefabInstance:
     - target: {fileID: 8108826972728606722, guid: 0515c3223824e3319b8746c2c829d211, type: 3}
       propertyPath: PauseMenu
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 489304798}
     - target: {fileID: 8108826972728606723, guid: 0515c3223824e3319b8746c2c829d211, type: 3}
       propertyPath: hud
       value: 
