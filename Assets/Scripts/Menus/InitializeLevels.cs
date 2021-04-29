@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class InitializeLevels : MonoBehaviour
 {
+
+    public GameObject creditsScene;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -13,6 +16,9 @@ public class InitializeLevels : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (creditsScene.activeSelf && Input.GetKey(KeyCode.Escape))
+        {
+            creditsScene.SetActive(false);
+        }
     }
 }

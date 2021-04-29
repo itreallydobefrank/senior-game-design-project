@@ -65,7 +65,15 @@ public class Player : MonoBehaviour
         }
 
         if(other.gameObject.CompareTag("CompleteZone")){
-            SceneManager.LoadScene("LevelComplete");
+            var level_Num = PlayerPrefs.GetInt("CurrentLevel");
+            if (level_Num == 1 || level_Num == 2)
+            {
+                SceneManager.LoadScene("LevelComplete");
+            } else if (level_Num == 3)
+            {
+                SceneManager.LoadScene("YouWin");
+            }
+
         }
     }
 
